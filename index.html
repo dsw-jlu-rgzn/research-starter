@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="面向新手科研人的 EHR Agent 与 EHR + CXR 入门路线、论文地图与 AI 工作流。" />
+    <title>lingling · Research Starter · EHR × AI</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <div class="noise" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="回到首页">
+        <span class="brand-mark">R/</span>
+        <span>LINGLING<br /><em>RESEARCH STARTER</em></span>
+      </a>
+      <nav class="main-nav" aria-label="主导航">
+        <a href="#directions">研究方向</a>
+        <a href="#roadmap">入门路线</a>
+        <a href="#papers">论文地图</a>
+        <a href="#lab">效率工具</a>
+      </nav>
+      <a class="header-cta" href="#deploy">发布到 GitHub <span>↗</span></a>
+    </header>
+
+    <main id="top">
+      <section class="hero shell">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="eyebrow-dot"></span> FIELD GUIDE / 001 · 2026</p>
+          <h1>把科研，做成一条<br /><span>能走完的路。</span></h1>
+          <p class="hero-lede">给刚开始做医学 AI 的你：从 EHR agent 到 EHR + CXR，从读懂第一篇论文到跑完第一个可复现实验。</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#roadmap">从第一周开始 <span>↓</span></a>
+            <a class="button button-ghost" href="#papers">打开论文地图 <span>↗</span></a>
+          </div>
+        </div>
+        <div class="hero-visual" aria-label="科研入门路线摘要">
+          <div class="hero-orbit orbit-one"></div>
+          <div class="hero-orbit orbit-two"></div>
+          <div class="orbit-label label-top">QUESTION<br /><strong>→</strong></div>
+          <div class="orbit-label label-right">EVIDENCE<br /><strong>→</strong></div>
+          <div class="orbit-label label-bottom">EXPERIMENT<br /><strong>→</strong></div>
+          <div class="hero-core"><span>01</span><strong>START<br />SMALL</strong><i></i></div>
+          <div class="hero-note"><span>本页不是百科</span><br />是一张可执行的地图。</div>
+        </div>
+      </section>
+
+      <section class="signal-bar shell" aria-label="网站定位">
+        <div><span>适合谁</span><strong>第一次做医学 AI 课题的人</strong></div>
+        <div><span>两条主线</span><strong>EHR Agent / EHR + CXR</strong></div>
+        <div><span>核心原则</span><strong>先问题，后模型；先证据，后结论</strong></div>
+      </section>
+
+      <section class="section shell" id="directions">
+        <div class="section-intro">
+          <p class="section-kicker">01 / CHOOSE A TRACK</p>
+          <h2>先选一条主线，<br /><em>再把问题做深。</em></h2>
+          <p>两个方向共享同一套科研地基：临床问题、数据定义、严谨评估、可复现代码。先用一个小问题建立闭环，不要一开始就做“全能模型”。</p>
+        </div>
+        <div class="track-grid">
+          <article class="track-card track-orange">
+            <div class="card-top"><span class="track-number">01</span><span class="card-arrow">↗</span></div>
+            <p class="card-label">STRUCTURED + TEXT</p>
+            <h3>EHR<br /><span>Agent</span></h3>
+            <p class="track-question">让模型学会“查、算、解释”，而不是只会生成一段像答案的文字。</p>
+            <div class="tag-row"><span>表格推理</span><span>工具调用</span><span>RAG</span></div>
+            <div class="track-footer"><span>第一问</span><strong>复杂 EHR 任务能否被拆成可验证的步骤？</strong></div>
+          </article>
+          <article class="track-card track-blue">
+            <div class="card-top"><span class="track-number">02</span><span class="card-arrow">↗</span></div>
+            <p class="card-label">LONGITUDINAL + VISION</p>
+            <h3>EHR <span>+</span> CXR</h3>
+            <p class="track-question">把时间线里的临床语境，和影像里的视觉证据放到同一个预测任务里。</p>
+            <div class="tag-row"><span>多模态融合</span><span>时间对齐</span><span>临床预测</span></div>
+            <div class="track-footer"><span>第一问</span><strong>额外模态带来的收益，是否来自真正互补的信息？</strong></div>
+          </article>
+        </div>
+        <div class="foundation-strip">
+          <span class="foundation-icon">◎</span>
+          <div><p class="card-label">THE COMMON GROUND</p><strong>共通地基：MIMIC-IV / MIMIC-CXR、队列定义、数据泄漏、外部验证、临床可解释性。</strong></div>
+          <a href="#lab">先看工作流 <span>→</span></a>
+        </div>
+      </section>
+
+      <section class="section section-tint" id="roadmap">
+        <div class="shell">
+          <div class="section-heading-row">
+            <div><p class="section-kicker">02 / START HERE</p><h2>六周入门路线</h2></div>
+            <p class="section-aside">每周只交付一个看得见的成果。<br />“完成”比“看过”更重要。</p>
+          </div>
+          <div class="roadmap">
+            <div class="road-step"><span class="week">WEEK 01</span><span class="step-dot"></span><h3>把临床问题写成一句话</h3><p>人群、暴露/输入、结局、时间窗、评价指标。</p><code>PICO → dataset → label</code></div>
+            <div class="road-step"><span class="week">WEEK 02</span><span class="step-dot"></span><h3>复现一个 baseline</h3><p>先用逻辑回归或简单 Transformer，跑通数据到指标。</p><code>split / train / eval</code></div>
+            <div class="road-step"><span class="week">WEEK 03</span><span class="step-dot"></span><h3>做一次论文拆解</h3><p>一页纸写清：任务、数据、方法、对照、失败模式。</p><code>claim ↔ evidence</code></div>
+            <div class="road-step"><span class="week">WEEK 04</span><span class="step-dot"></span><h3>加入一个可解释模块</h3><p>让 agent 的每一步都有输入、工具、输出和校验。</p><code>plan → act → verify</code></div>
+            <div class="road-step"><span class="week">WEEK 05</span><span class="step-dot"></span><h3>检查泄漏与稳健性</h3><p>按患者划分；做时间外、亚组和缺失值分析。</p><code>patient-level split</code></div>
+            <div class="road-step"><span class="week">WEEK 06</span><span class="step-dot"></span><h3>写出可复现 README</h3><p>别人拿到代码、环境和命令，能知道你做了什么。</p><code>seed / env / log</code></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section shell" id="papers">
+        <div class="section-heading-row paper-heading">
+          <div><p class="section-kicker">03 / READING MAP</p><h2>论文不要乱读，<br /><em>沿着问题读。</em></h2></div>
+          <p class="section-aside">先读综述建立词汇，再读 benchmark 认识任务，最后读方法论文找切口。</p>
+        </div>
+        <div class="filter-row" role="group" aria-label="筛选论文">
+          <button class="filter-button is-active" data-filter="all">全部 <span>06</span></button>
+          <button class="filter-button" data-filter="agent">EHR Agent <span>03</span></button>
+          <button class="filter-button" data-filter="multimodal">EHR + CXR <span>02</span></button>
+          <button class="filter-button" data-filter="foundation">共同地基 <span>01</span></button>
+        </div>
+        <div class="paper-list">
+          <article class="paper-card" data-category="foundation">
+            <div class="paper-index">A0</div><div class="paper-body"><div class="paper-meta"><span class="paper-type type-review">START WITH THIS</span><span>2024 · Survey</span></div><h3>A scoping review of using LLMs to investigate EHRs</h3><p>用 329 篇相关工作搭一张全景图：任务、数据、prompt、微调、评价与伦理。</p><a href="https://arxiv.org/abs/2405.03066" target="_blank" rel="noreferrer">打开论文 <span>↗</span></a></div>
+          </article>
+          <article class="paper-card" data-category="agent">
+            <div class="paper-index">A1</div><div class="paper-body"><div class="paper-meta"><span class="paper-type type-agent">AGENT</span><span>2024 · Method</span></div><h3>EHRAgent: Code Empowers LLMs for Few-shot Complex Tabular Reasoning</h3><p>观察如何让模型通过生成与执行代码，处理复杂的结构化 EHR 推理。</p><a href="https://arxiv.org/abs/2401.07128" target="_blank" rel="noreferrer">打开论文 <span>↗</span></a></div>
+          </article>
+          <article class="paper-card" data-category="agent">
+            <div class="paper-index">A2</div><div class="paper-body"><div class="paper-meta"><span class="paper-type type-agent">AGENT</span><span>2024 · Benchmark</span></div><h3>EHRAGENT / EHRXQA</h3><p>从数据查询、分解问题到多模态问答，关注任务设计与“可验证答案”怎么定义。</p><a href="https://openreview.net/pdf?id=ZjXEzFE0Qy" target="_blank" rel="noreferrer">EHRAGENT <span>↗</span></a><a href="https://openreview.net/pdf?id=Pk2x7FPuZ4" target="_blank" rel="noreferrer">EHRXQA <span>↗</span></a></div>
+          </article>
+          <article class="paper-card" data-category="multimodal">
+            <div class="paper-index">M1</div><div class="paper-body"><div class="paper-meta"><span class="paper-type type-multi">EHR + CXR</span><span>2025 · Benchmark</span></div><h3>MedMod: Multimodal Benchmark for Medical Prediction Tasks</h3><p>以 MIMIC-IV 与 MIMIC-CXR 为基础，覆盖条件、死亡、失代偿、住院时长与影像发现五类任务。</p><a href="https://proceedings.mlr.press/v287/elsharief25a.html" target="_blank" rel="noreferrer">打开论文 <span>↗</span></a></div>
+          </article>
+          <article class="paper-card" data-category="multimodal">
+            <div class="paper-index">M2</div><div class="paper-body"><div class="paper-meta"><span class="paper-type type-multi">EHR + CXR</span><span>2023 · Clinical ML</span></div><h3>Multimodal Deep Learning for Integrating Chest Radiographs and Clinical Parameters</h3><p>适合学习影像与临床参数如何做对齐、融合，以及如何验证额外模态是否真的有用。</p><a href="https://pubs.rsna.org/doi/10.1148/radiol.230806" target="_blank" rel="noreferrer">打开论文 <span>↗</span></a></div>
+          </article>
+          <article class="paper-card" data-category="agent">
+            <div class="paper-index">A3</div><div class="paper-body"><div class="paper-meta"><span class="paper-type type-agent">AGENT</span><span>2025 · Survey</span></div><h3>A Comprehensive Survey of Electronic Health Record Modeling</h3><p>从数据、架构、学习策略、多模态到 LLM 系统，适合在选题前补齐 EHR 建模版图。</p><a href="https://arxiv.org/abs/2507.12774" target="_blank" rel="noreferrer">打开论文 <span>↗</span></a></div>
+          </article>
+        </div>
+        <p class="source-note">论文链接指向公开预印本、会议页面或期刊页面；正式做综述时，请再核对版本、发表状态与引用信息。</p>
+      </section>
+
+      <section class="section section-dark" id="lab">
+        <div class="shell">
+          <div class="section-heading-row lab-heading"><div><p class="section-kicker light">04 / THE RESEARCH LAB</p><h2>高效科研，<br /><em>靠的是闭环。</em></h2></div><p class="section-aside light-text">把搜索、阅读、编码、写作串成一条线；AI 负责加速，人负责判断。</p></div>
+          <div class="lab-grid">
+            <article class="lab-card">
+              <div class="lab-card-top"><span class="lab-no">01</span><span class="lab-icon">⌕</span></div><h3>AI 搜文献：从“大问题”到可检索句子</h3>
+              <ol><li>先写 3 个同义词组：人群 / 方法 / 结局。</li><li>用 PubMed、Semantic Scholar、Google Scholar 交叉查。</li><li>让 AI 输出“相关但不确定”的候选，再回到原文核验。</li></ol>
+              <div class="prompt-box"><p>可复制提示词</p><button class="copy-button" data-copy="请把这个研究问题拆成 PubMed 检索式：人群、输入/暴露、结局、时间窗、方法同义词，并标注每组词的理由。">复制 ↗</button><code>请把这个研究问题拆成 PubMed 检索式…</code></div>
+            </article>
+            <article class="lab-card">
+              <div class="lab-card-top"><span class="lab-no">02</span><span class="lab-icon">◫</span></div><h3>读论文：先抓结构，再读细节</h3>
+              <ol><li>先读摘要、图表、结论，写下作者的 1 个核心 claim。</li><li>回到方法，检查数据划分、baseline 和评价指标。</li><li>最后读局限：它正好是下一篇工作的入口。</li></ol>
+              <div class="mini-rule"><span>CLAIM</span><i></i><span>EVIDENCE</span><i></i><span>LIMIT</span></div>
+            </article>
+            <article class="lab-card">
+              <div class="lab-card-top"><span class="lab-no">03</span><span class="lab-icon">⌘</span></div><h3>使用 Codex：让它成为你的研究副驾驶</h3>
+              <ol><li>把仓库、数据字典、实验目标和验收标准说清楚。</li><li>先让它读代码、画流程、找风险，再让它改。</li><li>每次改动都要求：命令、日志、测试结果与 diff。</li></ol>
+              <div class="prompt-box"><p>研究任务模板</p><button class="copy-button" data-copy="请先阅读这个项目，不要修改文件。输出：1. 数据流；2. 可能的数据泄漏；3. 最小可复现实验；4. 需要我确认的假设。">复制 ↗</button><code>请先阅读这个项目，不要修改文件…</code></div>
+            </article>
+            <article class="lab-card lab-card-wide">
+              <div class="lab-card-top"><span class="lab-no">04</span><span class="lab-icon">◌</span></div><h3>网络访问与安全：先合规，再提速</h3>
+              <div class="network-columns"><div><strong>01 · 先走授权入口</strong><p>优先使用学校/机构提供的 VPN、图书馆代理或校外访问服务：安装官方客户端 → 用统一认证登录 → 连接后访问 PubMed、arXiv、GitHub 等可信入口。</p></div><div><strong>02 · 不用未知“免费代理”</strong><p>遵守当地法律、学校规定和数据提供方条款。不要在不明来源工具里输入账号、token 或患者数据，也不要把“能打开网页”当成“可以上传数据”。</p></div><div><strong>03 · 最小安全清单</strong><p>启用 2FA；浏览器只保存可信书签；数据脱敏；密钥放环境变量；论文检索与患者数据处理分开。遇到访问问题，先联系学校信息化部门。</p></div></div>
+            </article>
+          </div>
+          <div class="workflow-line"><span>QUESTION</span><b>→</b><span>SEARCH</span><b>→</b><span>READ</span><b>→</b><span>CODE</span><b>→</b><span>CHECK</span><b>→</b><span>WRITE</span></div>
+        </div>
+      </section>
+
+      <section class="section shell checklist-section">
+        <div class="checklist-copy"><p class="section-kicker">05 / THIS WEEK</p><h2>本周实验板</h2><p>把“我要开始科研”换成 4 个可勾选动作。勾选状态只保存在当前浏览器。</p></div>
+        <div class="checklist" aria-label="本周实验任务">
+          <label><input type="checkbox" /><span class="checkmark"></span><span><b>写出一个 PICO 问题</b><small>不超过 50 字</small></span><em>01</em></label>
+          <label><input type="checkbox" /><span class="checkmark"></span><span><b>精读 1 篇起点论文</b><small>产出一页拆解卡</small></span><em>02</em></label>
+          <label><input type="checkbox" /><span class="checkmark"></span><span><b>跑通 1 个 baseline</b><small>记录环境与随机种子</small></span><em>03</em></label>
+          <label><input type="checkbox" /><span class="checkmark"></span><span><b>写下 3 个失败模式</b><small>把失败变成下一步</small></span><em>04</em></label>
+        </div>
+      </section>
+
+      <section class="deploy-band" id="deploy">
+        <div class="shell deploy-inner"><div><p class="section-kicker">06 / SHIP IT</p><h2>把这张地图，<br /><em>发布成你的主页。</em></h2><p>这是一个纯静态站点，适合放在自己的 GitHub 仓库里，用 GitHub Actions 自动部署到 Pages。</p></div><div class="deploy-steps"><div><span>01</span><strong>新建仓库</strong><small>将本目录推送到你的 GitHub repo</small></div><div><span>02</span><strong>打开 Pages</strong><small>Settings → Pages → GitHub Actions</small></div><div><span>03</span><strong>持续更新</strong><small>push 到 main 后自动发布</small></div></div><a class="button button-light" href="README.md">查看部署说明 <span>↗</span></a></div>
+      </section>
+    </main>
+
+    <footer class="site-footer shell"><div class="footer-brand">R/ <span>LINGLING · RESEARCH STARTER</span></div><p>面向新手科研人的 EHR × AI 入门地图 · 资料仅用于科研学习，不构成医疗建议。</p><a href="#top">回到顶部 ↑</a></footer>
+  </body>
+</html>
